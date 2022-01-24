@@ -1,4 +1,4 @@
-package Daty_24_01_2022_Generics;
+package Day_24_01_2022_Generics;
 
 interface MinMax<T extends Comparable<T>> {
 	T min();
