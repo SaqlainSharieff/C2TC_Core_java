@@ -1,30 +1,25 @@
 package com.tns.framework;
 
-public abstract class SavingAcc extends BankAcc
-{
-	
+public abstract class SavingAcc extends BankAcc {
+	private boolean isSalaried;
 
-	private boolean isSalary;
-	
-	public SavingAcc(int accNo, String accNm, float accBa, boolean isSalary) {
-		super(accNo, accNm, accBa);
-		this.setSalary(isSalary);
+	private static final float MINBAL = 1000;
+
+	public SavingAcc(int accNo, String accName, float accBal, boolean isSalaried) {
+		super(accNo, accName, accBal);
+		this.isSalaried = isSalaried;
 	}
-	public void withdraw(float  accBal )
-	{
-		
+
+	@Override
+	public void withdraw(float withdrawal) {
+
+		super.withdraw(withdrawal);
 	}
+
 	@Override
 	public String toString() {
-		return "SavingAcc [isSalary=" + isSalary() + ", accNo=" + accNo + ", accNm=" + accNm + ", accBa=" + accBa
-				+ ", toString()=" + super.toString() + ", getClass()=" + getClass() + ", hashCode()=" + hashCode()
-				+ "]";
-	}
-	public boolean isSalary() {
-		return isSalary;
-	}
-	public void setSalary(boolean isSalary) {
-		this.isSalary = isSalary;
+		return "SavingAcc [isSalaried=" + isSalaried + ", toString()=" + super.toString() + ", getClass()=" + getClass()
+				+ ", hashCode()=" + hashCode() + "]";
 	}
 
 }

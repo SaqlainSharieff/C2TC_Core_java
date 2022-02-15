@@ -7,21 +7,20 @@ import com.tns.framework.BankFactory;
 import com.tns.framework.CurrentAcc;
 import com.tns.framework.SavingAcc;
 
-public class Client 
-{
+public class Client {
 
 	public static void main(String[] args) {
-		BankFactory bank = new MMBankFactory();
-		CurrentAcc a1=new MMCurrentAcc(969696, "jhon", 1000, 4000);
-		SavingAcc a2=new MMSavingAcc(99559955, "withdraw", 100, true);
-		String a=a1.toString();
-		System.out.println(a);
-		String b=a2.toString();
-		System.out.println(b);
-		//a1.getNewCurrentAccount(3021, "jhon", 1000, 5000);
-		//a1.getNewSavingsAccount(188221, "withdraw", 2000, true);Client
-		
-		
+		BankFactory bf = new MMBankFactory();
+		SavingAcc sb = new MMSavingAcc(6012456, "jhonwick", 10000, true);
+		CurrentAcc cu = new MMCurrentAcc(6022142, "doctor strange", 20000, 25000);
+
+		cu.withdraw(15000);
+		cu.deposit(10000);
+		System.out.println(cu.toString());
+		sb.withdraw(4000);
+		sb.deposit(2000);
+		System.out.println(sb.toString());
+
 	}
 
 }
